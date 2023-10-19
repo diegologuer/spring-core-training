@@ -11,7 +11,6 @@ import java.util.Map;
 @Component(value = "freeParkingLot")
 public class FreeParkingLot implements ParkingLot{
 
-    private String[] allCars;
     @Autowired
     Map<String,Car> cars;
 
