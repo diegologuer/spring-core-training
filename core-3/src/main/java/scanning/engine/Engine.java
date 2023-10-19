@@ -1,4 +1,4 @@
-package parkinglot;
+package scanning.engine;
 
 public interface Engine {
 

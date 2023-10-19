@@ -1,4 +1,4 @@
-package parkinglot;
+package config.car;
 
 public interface Car {
 
