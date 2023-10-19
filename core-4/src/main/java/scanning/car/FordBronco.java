@@ -9,7 +9,7 @@ public class FordBronco implements Car{
 
     private Engine engine;
 
-    public FordBronco(@Qualifier("defaultV6Engine") Engine engine){
+    public FordBronco(Engine engine){
         this.engine = engine;
     }
     @Override

@@ -6,21 +6,18 @@ import org.springframework.stereotype.Component;
 import scanning.car.Car;
 
 import java.util.List;
+import java.util.Map;
 
 @Component(value = "freeParkingLot")
 public class FreeParkingLot implements ParkingLot{
 
     private String[] allCars;
-
     @Autowired
-    public FreeParkingLot(ApplicationContext applicationContext){
-        String[] allCars = applicationContext.getBeanNamesForType(Car.class);
-        this.allCars = allCars;
-    }
+    Map<String,Car> cars;
 
     @Override
     public void printCarsName() {
-        for (String element : allCars){
+        for (String element : cars.keySet()){
             System.out.println(element);
         }
     }
