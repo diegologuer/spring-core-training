@@ -1,4 +1,4 @@
-package config.ParkingLot;
+package config.parkingLot;
 
 public interface ParkingLot {
 

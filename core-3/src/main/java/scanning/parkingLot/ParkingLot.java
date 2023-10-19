@@ -1,4 +1,4 @@
-package scanning.ParkingLot;
+package scanning.parkingLot;
 
 public interface ParkingLot {
 

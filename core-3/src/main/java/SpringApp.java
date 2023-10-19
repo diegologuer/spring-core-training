@@ -8,9 +8,8 @@
 // 4. Create application context an print all bean names once again.
 
 import config.config.ProjectConfigConfig;
-import scanning.ParkingLot.ParkingLot;
+import scanning.parkingLot.ParkingLot;
 import scanning.car.Car;
-import scanning.config.ProjectConfigScan;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import scanning.engine.Engine;
 
@@ -18,7 +17,7 @@ public class SpringApp {
 
     public static void main(String[] args) {
         // initiate application context there
-        var context1 = new AnnotationConfigApplicationContext(ProjectConfigScan.class);
+        var context1 = new AnnotationConfigApplicationContext("scanning");
         var context2 = new AnnotationConfigApplicationContext(ProjectConfigConfig.class);
 
         System.out.println("-----------Context 1-----------");
@@ -37,7 +36,7 @@ public class SpringApp {
         context2.getBeansOfType(config.car.Car.class).forEach((bean, car) -> System.out.println( bean));
 
         //print quantity of cars
-        var b = context2.getBean(config.ParkingLot.ParkingLot.class);
+        var b = context2.getBean(config.parkingLot.ParkingLot.class);
         b.printCarsCount();
 
     }

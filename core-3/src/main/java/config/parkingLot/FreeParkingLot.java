@@ -1,7 +1,6 @@
-package config.ParkingLot;
+package config.parkingLot;
 
 import config.car.Car;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 import java.util.List;

@@ -1,10 +1,9 @@
-package scanning.ParkingLot;
+package scanning.parkingLot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import scanning.car.Car;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component(value = "freeParkingLot")

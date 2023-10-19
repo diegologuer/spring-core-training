@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component(value="oldSchoolStuff")
-@Qualifier("oldSchoolStuff")
 public class FourCylinderEngine implements Engine {
 
     @Override
