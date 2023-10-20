@@ -8,7 +8,6 @@ import app.engine.V6Engine;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -16,19 +15,11 @@ import org.springframework.stereotype.Component;
 @PropertySource("classpath:context.properties")
 public class ProjectConfig {
 
-    @Value("${ford.engine.cylinders}")
-    private int fordEngineCylinders;
-
-    @Value("${volkswagen.oil}")
-    private String volkswagenOil;
-
-    @Value("${chevrolet.maxSpeed:300}")
-    private int chevroletMaxSpeed;
 
     @Bean
-    Engine defaultV6Engine(){
+    Engine defaultV6Engine(@Value("${ford.engine.cylinders}") int cylinders){
         var e = new V6Engine();
-        e.setQuantityOfCylinders(fordEngineCylinders);
+        e.setQuantityOfCylinders(cylinders);
         return e;
     }
 
@@ -45,16 +36,17 @@ public class ProjectConfig {
     }
 
     @Bean
-    Car Bumblebee(@Qualifier("oldSchoolStuff") Engine engine){
+    Car Bumblebee(@Qualifier("oldSchoolStuff") Engine engine, @Value("${volkswagen.oil}") String oil){
         var e = new VolkswagenBeetle(engine);
-        e.setOil(volkswagenOil);
+        e.setOil(oil);
         return e;
     }
 
     @Bean
-    Car wheelsOfDevil(@Qualifier("powerOverwhelmingStuff") Engine engine){
+    Car wheelsOfDevil(@Qualifier("powerOverwhelmingStuff") Engine engine,
+                      @Value("${chevrolet.maxSpeed:300}") int maxSpeed){
         var e = new ChevroletCamaro(engine);
-        e.setMaxSpeed(chevroletMaxSpeed);
+        e.setMaxSpeed(maxSpeed);
         return e;
     }
 
@@ -69,6 +61,4 @@ public class ProjectConfig {
         var e = new FordRaptor(engine);
         return e;
     }
-
-
 }
