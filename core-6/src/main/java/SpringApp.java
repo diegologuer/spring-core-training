@@ -5,10 +5,13 @@
 // 4. Create a new TeslaHoverPlus car. Inject an Engine bean with name "plasmaEnginePlus", although don't create this bean.
 // 5. Whatever you did at step 3, find another way to load the context without creating a real engine bean.
 
+import app.config.ProjectConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class SpringApp {
 
     public static void main(String[] args) {
         //initialize application context there
-
+        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
     }
 }
