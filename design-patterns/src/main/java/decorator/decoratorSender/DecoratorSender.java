@@ -4,14 +4,6 @@ import decorator.Sender;
 
 public abstract class DecoratorSender implements Sender {
 
-    private Sender sender;
-
-    public DecoratorSender(Sender sender) {
-        this.sender = sender;
-    }
-
-    @Override
-    public void send(String message) {
-        this.sender.send(message);
-    }
+    Sender sender;
+    public abstract void send(String message);
 }

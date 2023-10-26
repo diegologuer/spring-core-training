@@ -23,7 +23,7 @@ public class DecoratorPattern {
         //Test
         sender.send("Hello world");
         retrySender.send("Hello world");
-        trimSender.send("###$$Hello&&&world@@@@@");
+        trimSender.send("###$$Hello world@@@@@");
 
     }
 }

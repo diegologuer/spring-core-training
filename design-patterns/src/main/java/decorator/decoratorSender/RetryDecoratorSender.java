@@ -5,7 +5,7 @@ import decorator.Sender;
 public class RetryDecoratorSender extends DecoratorSender {
 
     public RetryDecoratorSender(Sender sender) {
-        super(sender);
+        this.sender = sender;
     }
 
     @Override
@@ -13,7 +13,7 @@ public class RetryDecoratorSender extends DecoratorSender {
         int retries = 0;
         while (retries < 2) {
             try {
-                super.send(message);
+                sender.send(message);
                 break;
             } catch (RuntimeException e) {
                 e.printStackTrace();
