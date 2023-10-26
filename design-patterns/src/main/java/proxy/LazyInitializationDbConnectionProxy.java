@@ -1,7 +1,7 @@
 package proxy;
 
 
-public class LazyInitializationDbConnectionProxy implements Connection{
+public class LazyInitializationDbConnectionProxy implements Connection {
     private DbConnection dbConnection;
 
     @Override

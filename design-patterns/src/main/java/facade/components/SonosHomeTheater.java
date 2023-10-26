@@ -1,7 +1,7 @@
 package facade.components;
 
-public class SonosHomeTheater implements HomeTheater{
-    AudioSpeakers  audioSpeakers;
+public class SonosHomeTheater implements HomeTheater {
+    AudioSpeakers audioSpeakers;
     TV tv;
     VHSPlayer vhsPlayer;
 
